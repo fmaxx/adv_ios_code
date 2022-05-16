@@ -1,18 +1,44 @@
+#!/bin/bash
+set -e
+
+# variables, paths
+ROOT=AdvertisingSdk
+OUTPUT=$ROOT/output
+ARCHIVES=$OUTPUT/archives
+SCHEME=AdvertisingSdk
+
+# don't worry if the folder is empty
+rm -R $OUTPUT || true
+
+# build artifacts
 xcodebuild archive \
-  -scheme AdvertisingSdk \
+  -scheme $SCHEME \
   -sdk iphoneos \
-  -archivePath "AdvertisingSdk/archives/ios_devices.xcarchive" \
+  -archivePath "$ARCHIVES/ios_devices.xcarchive" \
   BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
   SKIP_INSTALL=NO
 
 xcodebuild archive \
-  -scheme AdvertisingSdk \
+  -scheme $SCHEME \
   -sdk iphonesimulator \
-  -archivePath "AdvertisingSdk/archives/ios_simulators.xcarchive" \
+  -archivePath "$ARCHIVES/ios_simulators.xcarchive" \
   BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
   SKIP_INSTALL=NO
 
 xcodebuild -create-xcframework \
-  -framework archives/ios_devices.xcarchive/Products/Library/Frameworks/AdvertisingSdk.framework \
-  -framework archives/ios_simulators.xcarchive/Products/Library/Frameworks/AdvertisingSdk.framework \
-  -output AdvertisingSdk/AdvertisingSdk.xcframework
+  -framework $ARCHIVES/ios_devices.xcarchive/Products/Library/Frameworks/$SCHEME.framework \
+  -framework $ARCHIVES/ios_simulators.xcarchive/Products/Library/Frameworks/$SCHEME.framework \
+  -output $OUTPUT/AdvertisingSdk.xcframework
+
+echo "XBuild [OK]"
+
+# create the output ZIP file
+cp $ROOT/LICENSE $OUTPUT/LICENSE 
+cd $OUTPUT
+
+zip -r \
+$SCHEME.zip \
+LICENSE \
+$SCHEME.xcframework 
+
+echo "Zip [OK]"
