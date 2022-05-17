@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (5.6.1)
+  - FmaxTestAdvertisingSdk (0.0.9):
+    - Alamofire
+    - Kingfisher
+  - Kingfisher (7.2.2)
+
+DEPENDENCIES:
+  - FmaxTestAdvertisingSdk (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+
+EXTERNAL SOURCES:
+  FmaxTestAdvertisingSdk:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  FmaxTestAdvertisingSdk: ac7fc829a98faae42a854af589ab247a453ccaaa
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
+
+PODFILE CHECKSUM: cbabd23afb5f8cd9422e8b29ca543321d5afa383
+
+COCOAPODS: 1.11.3
