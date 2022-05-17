@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_FmaxTestAdvertisingSdk_FmaxTestAdvertisingSdkTests : NSObject
+@end
+@implementation PodsDummy_Pods_FmaxTestAdvertisingSdk_FmaxTestAdvertisingSdkTests
+@end

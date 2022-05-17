@@ -1,0 +1,11 @@
+framework module FmaxTestAdvertisingSdk {
+  umbrella header "FmaxTestAdvertisingSdk.h"
+
+  export *
+  module * { export * }
+}
+
+module FmaxTestAdvertisingSdk.Swift {
+    header "FmaxTestAdvertisingSdk-Swift.h"
+    requires objc
+}

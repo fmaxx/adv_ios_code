@@ -1,0 +1,6 @@
+framework module Pods_FmaxTestAdvertisingSdk_FmaxTestAdvertisingSdkTests {
+  umbrella header "Pods-FmaxTestAdvertisingSdk-FmaxTestAdvertisingSdkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
