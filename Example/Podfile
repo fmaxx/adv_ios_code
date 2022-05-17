@@ -1,9 +1,10 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'FmaxTestAdvertisingSdk_Example' do
-  pod 'FmaxTestAdvertisingSdk', :path => '../'
+   pod 'FmaxTestAdvertisingSdk', :path => '../'
+#  pod 'FmaxTestAdvertisingSdk', '~> 0.0.7'
 
   target 'FmaxTestAdvertisingSdk_Tests' do
     inherit! :search_paths

@@ -1,3 +1,8 @@
+# project stuff
+output/
+Pods/
+
+
 # macOS
 .DS_Store
 
