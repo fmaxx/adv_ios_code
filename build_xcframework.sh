@@ -14,7 +14,7 @@ rm -R $OUTPUT || true
 
 # build artifacts
 xcodebuild archive \
-  -workspace $WORKSPACE \
+  -configuration Release \
   -scheme $SCHEME \
   -sdk iphoneos \
   -archivePath "$ARCHIVES/ios_devices.xcarchive" \
@@ -22,7 +22,7 @@ xcodebuild archive \
   SKIP_INSTALL=NO
 
 xcodebuild archive \
-  -workspace $WORKSPACE \
+  -configuration Release \
   -scheme $SCHEME \
   -sdk iphonesimulator \
   -archivePath "$ARCHIVES/ios_simulators.xcarchive" \
